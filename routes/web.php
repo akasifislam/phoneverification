@@ -23,6 +23,9 @@ Route::get('/', function () {
 Route::get('user', [UserController::class, 'create']);
 Route::post('user', [UserController::class, 'store'])->name('user.store');
 
+Route::get('/verify', [UserController::class, 'getVerify'])->name('get.verify');
+Route::post('/verify', [UserController::class, 'postVerify'])->name('post.verify');
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

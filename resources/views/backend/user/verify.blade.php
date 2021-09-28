@@ -8,13 +8,13 @@
                 <div class="card-header">Phone Verify</div>
 
                 <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
+                    @if (session('message'))
+                        <div class="alert alert-danger">
+                            {{ Session::get('message') }}
                         </div>
                     @endif
 
-                    <form method="POST" action="{{ route('user.store') }}">
+                    <form method="POST" action="{{ route('post.verify') }}">
                         @csrf
 
                         <div class="form-group row">
